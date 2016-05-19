@@ -1,4 +1,4 @@
-package gagan.ameba.spycamera;
+package ggn.ameba.spycam;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -13,8 +13,9 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import gagan.ameba.spycamera.service_background.ServiceMovableCameraBtn;
-import gagan.ameba.spycamera.service_background.SharedPrefHelper;
+import ggn.ameba.spycam.service_background.BackgroundVideoRecorder;
+import ggn.ameba.spycam.service_background.ServiceMovableCameraBtn;
+import ggn.ameba.spycam.service_background.SharedPrefHelper;
 
 public class MainActivityG extends AppCompatActivity implements View.OnClickListener
 {
@@ -105,12 +106,26 @@ public class MainActivityG extends AppCompatActivity implements View.OnClickList
         return true;
     }
 
+    @Override
+    public void onBackPressed()
+    {
+
+        Intent front_translucent = new Intent(MainActivityG.this, BackgroundVideoRecorder.class);
+        stopService(
+                front_translucent);
+
+
+        super.onBackPressed();
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
+        Intent front_translucent = new Intent(MainActivityG.this, BackgroundVideoRecorder.class);
+        front_translucent.putExtra("Front_Request", true);
+        startService(
+                front_translucent);
 
-        startActivity(new Intent(MainActivityG.this, Help.class));
         return super.onOptionsItemSelected(item);
     }
 

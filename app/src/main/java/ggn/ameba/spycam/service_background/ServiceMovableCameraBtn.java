@@ -1,4 +1,4 @@
-package gagan.ameba.spycamera.service_background;
+package ggn.ameba.spycam.service_background;
 
 import android.annotation.TargetApi;
 import android.app.Notification;
@@ -12,7 +12,6 @@ import android.graphics.PixelFormat;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.IBinder;
 import android.view.GestureDetector;
@@ -23,8 +22,8 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import gagan.ameba.spycamera.MainActivityG;
-import gagan.ameba.spycamera.R;
+import ggn.ameba.spycam.MainActivityG;
+import ggn.ameba.spycam.R;
 
 
 public class ServiceMovableCameraBtn extends Service implements View.OnTouchListener

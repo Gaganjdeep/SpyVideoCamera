@@ -1,11 +1,11 @@
-package gagan.ameba.spycamera;
+package ggn.ameba.spycam;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.WakefulBroadcastReceiver;
 
-import gagan.ameba.spycamera.service_background.CamerService;
-import gagan.ameba.spycamera.service_background.SharedPrefHelper;
+import ggn.ameba.spycam.service_background.CamerService;
+import ggn.ameba.spycam.service_background.SharedPrefHelper;
 
 /**
  * Created by gagandeep on 23 Mar 2016.
@@ -27,6 +27,7 @@ public class ReceiverG extends WakefulBroadcastReceiver
             context.startService(
                     front_translucent);
         }
+
 
     }
 }

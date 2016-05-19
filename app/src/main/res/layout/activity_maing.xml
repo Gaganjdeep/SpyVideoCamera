@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    android:animateLayoutChanges="true"
-    tools:context="gagan.ameba.spycamera.MainActivityG">
+    tools:context="ggn.ameba.spycam.MainActivityG">
 
 
     <android.support.v7.widget.SwitchCompat
@@ -30,24 +30,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/colorAccent"
             android:gravity="center"
             android:padding="10dp"
             android:text="Front Cam"
             android:textColor="#000"
-            android:textStyle="bold"
-            android:background="@color/colorAccent"/>
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/tvRearCam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/white"
             android:gravity="center"
             android:padding="10dp"
             android:text="Rear Cam"
             android:textColor="#000"
-            android:textStyle="bold"
-            android:background="@color/white"/>
+            android:textStyle="bold"/>
 
 
     </LinearLayout>
@@ -55,7 +55,7 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btnFlash"
-         android:layout_width="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_margin="20dp"
@@ -66,10 +66,10 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btn"
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:background="?attr/colorPrimary"
         android:onClick="floatingCamera"
         android:src="@mipmap/ic_camera"/>

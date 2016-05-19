@@ -1,4 +1,4 @@
-package gagan.ameba.spycamera.service_background;
+package ggn.ameba.spycam.service_background;
 
 import android.app.Service;
 import android.content.Context;
@@ -29,7 +29,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 
-import gagan.ameba.spycamera.NotificationHelper;
+import ggn.ameba.spycam.utills.NotificationHelper;
 
 /**
  * Created by gagandeep on 23 Mar 2016.
@@ -94,11 +94,6 @@ public class CamerService extends Service implements
                 {
                     Log.e("Camera",
                             "Camera failed to open: " + e.getLocalizedMessage());
-                /*
-                 * Toast.makeText(getApplicationContext(),
-                 * "Front Camera failed to open", Toast.LENGTH_LONG)
-                 * .show();
-                 */
                 }
             }
         }
@@ -145,7 +140,7 @@ public class CamerService extends Service implements
             else
             {
                 int resultArea = result.width * result.height;
-                int newArea = size.width * size.height;
+                int newArea    = size.width * size.height;
 
                 if (newArea > resultArea)
                 {
@@ -438,7 +433,7 @@ public class CamerService extends Service implements
                         // set camera parameters
                         mCamera.setParameters(parameters);
                         mCamera.startPreview();
-                        Log.d("ImageTakin", "OnTake()");
+
                         try
                         {
                             Thread.sleep(300);
@@ -517,7 +512,6 @@ public class CamerService extends Service implements
     {
         // sv = new SurfaceView(getApplicationContext());
         cameraIntent = intent;
-        Log.d("ImageTakin", "StartCommand()");
         pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         editor = pref.edit();
 
@@ -555,7 +549,6 @@ public class CamerService extends Service implements
         public void onPictureTaken(byte[] data, Camera camera)
         {
             // decode the data obtained by the camera into a Bitmap
-            Log.d("ImageTakin", "Done");
             if (bmp != null)
                 bmp.recycle();
             System.gc();

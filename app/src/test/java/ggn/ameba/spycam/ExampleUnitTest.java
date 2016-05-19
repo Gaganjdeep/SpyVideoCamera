@@ -1,4 +1,4 @@
-package gagan.ameba.spycamera;
+package ggn.ameba.spycam;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package gagan.ameba.spycamera;
+package ggn.ameba.spycam.utills;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -11,6 +11,8 @@ import android.provider.MediaStore;
 import android.support.v4.app.NotificationCompat;
 
 import java.io.IOException;
+
+import ggn.ameba.spycam.R;
 
 /**
  * Created by gagandeep on 28 Mar 2016.

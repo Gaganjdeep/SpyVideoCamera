@@ -1,4 +1,4 @@
-package gagan.ameba.spycamera.service_background;
+package ggn.ameba.spycam.service_background;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -47,9 +47,6 @@ public class SharedPrefHelper
     }
 
 
-
-
-
     public void setFrontCam(boolean frontCam)
     {
         SharedPreferences.Editor ed = shared.edit();
@@ -62,9 +59,6 @@ public class SharedPrefHelper
     {
         return shared.getBoolean("frontCam", true);
     }
-
-
-
 
 
 }
