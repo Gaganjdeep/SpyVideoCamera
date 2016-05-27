@@ -1,11 +1,85 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/white</item>
+
     </style>
+
+
+    <!-- Base application theme. -->
+    <style name="AppThemeCamera" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/ligtblue</item>
+        <item name="colorPrimaryDark">@color/ligtblue_dark</item>
+        <item name="colorAccent">@color/ligtblue</item>
+        <item name="colorControlNormal">@color/white</item>
+
+    </style>
+
+
+    <!-- Base application theme. -->
+    <style name="AppThemeVideo" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/yellowish</item>
+        <item name="colorPrimaryDark">@color/yellowish_dark</item>
+        <item name="colorAccent">@color/yellowish</item>
+        <item name="colorControlNormal">@color/white</item>
+
+    </style>
+
+
+    <!-- Base application theme. -->
+    <style name="AppThemeAudio" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/redish</item>
+        <item name="colorPrimaryDark">@color/redish_dark</item>
+        <item name="colorAccent">@color/redish</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+
+    <!-- Base application theme. -->
+    <style name="AppThemeSettings" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/grenish</item>
+        <item name="colorPrimaryDark">@color/grenish_dark</item>
+        <item name="colorAccent">@color/grenish</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style name="Theme_Dialog" parent="android:Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="colorControlNormal">@color/black</item>
+    </style>
+
+
+
+
+
+
+
+
 
 </resources>

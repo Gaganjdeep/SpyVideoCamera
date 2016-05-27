@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/black">
+
+  <android.support.v7.widget.Toolbar
+      android:id="@+id/tool_bar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="?colorAccent"
+      android:contentInsetEnd="0dp"
+      android:contentInsetLeft="0dp"
+      android:contentInsetRight="0dp"
+      android:contentInsetStart="0dp"
+      app:contentInsetEnd="0dp"
+      app:contentInsetLeft="0dp"
+      app:contentInsetRight="0dp"
+      app:contentInsetStart="0dp">
+
+    <!--
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="Get Some Pictures"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title"
+                android:textStyle="bold"/>-->
+
+
+  </android.support.v7.widget.Toolbar>
+
+    <GridView
+        android:id="@+id/grid_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/tool_bar"
+        android:layout_gravity="top"
+        android:clipToPadding="false"
+        android:drawSelectorOnTop="true"
+        android:gravity="center"
+        android:horizontalSpacing="4dp"
+        android:listSelector="@drawable/list_selector"
+        android:numColumns="auto_fit"
+        android:paddingBottom="4dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="4dp"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="4dp" />
+
+</LinearLayout>
