@@ -1,8 +1,10 @@
 package ggn.ameba.spycam.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import ggn.ameba.spycam.service_background.CamerService;
 import ggn.ameba.spycam.utills.SharedPrefHelper;
 
 /**
@@ -26,6 +28,57 @@ public class BaseActivityG extends AppCompatActivity
     {
         return localdata;
     }
+
+
+    public Intent getBackgroundIntent(Class serviceClass)
+    {
+        boolean frontCam;
+        boolean flash;
+
+        if (serviceClass.getName().contains("CamerService"))
+        {
+            frontCam = getLocaldata().isFrontCamCamera();
+            flash = getLocaldata().isFlashOnCamera();
+        }
+        else
+        {
+            frontCam = getLocaldata().isFrontCamVideo();
+            flash = getLocaldata().isFlashOnVideo();
+        }
+
+
+        Intent serviceIntent = new Intent(this, serviceClass);
+        serviceIntent.putExtra("Quality_Mode", 0);
+
+
+        if (!frontCam)
+        {
+            if (flash)
+            {
+                serviceIntent.putExtra("FLASH", "auto");
+            }
+            else
+            {
+                serviceIntent.putExtra("FLASH", "off");
+            }
+            serviceIntent.putExtra("Front_Request", false);
+        }
+        else
+        {
+            serviceIntent.putExtra("Front_Request", true);
+        }
+
+
+        return serviceIntent;
+    }
+
+
+
+
+
+
+
+
 
 
 /*    Dialog dialog;

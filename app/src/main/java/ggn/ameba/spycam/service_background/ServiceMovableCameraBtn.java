@@ -155,8 +155,6 @@
 //            {
 //                front_translucent.putExtra("FLASH", "off");
 //            }
-//
-//
 //        }
 //
 //

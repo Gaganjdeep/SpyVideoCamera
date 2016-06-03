@@ -5,6 +5,6 @@ package ggn.ameba.spycam.utills;
  */
 public class GlobalContstantG
 {
-
+    public static int INSERT_CONTACT_REQUEST = 27;
 
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import ggn.ameba.spycam.R;
+import ggn.ameba.spycam.utills.Background;
 import ggn.ameba.spycam.utills.Gallery;
 
 public class RecordAudioActivity extends BaseActivityG
@@ -20,7 +21,9 @@ public class RecordAudioActivity extends BaseActivityG
 
     public void recordBackground(View view)
     {
-        startActivity(new Intent(RecordAudioActivity.this, RecordBackGroundActivity.class));
+        Intent intent = new Intent(RecordAudioActivity.this, RecordBackGroundActivity.class);
+        intent.putExtra("background", Background.AUDIO.getValue());
+        startActivity(intent);
     }
 
     public void bySendingSMS(View view)

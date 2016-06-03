@@ -9,15 +9,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PixelFormat;
 import android.hardware.Camera;
-import android.media.MediaScannerConnection;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.SurfaceHolder;
@@ -29,7 +26,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 
-import ggn.ameba.spycam.utills.NotificationHelper;
+import ggn.ameba.spycam.utills.SharedPrefHelper;
 
 /**
  * Created by gagandeep on 23 Mar 2016.
@@ -260,8 +257,7 @@ public class CamerService extends Service implements
                         Camera.Parameters parameters = mCamera.getParameters();
                         pictureSize = getBiggesttPictureSize(parameters);
                         if (pictureSize != null)
-                            parameters
-                                    .setPictureSize(pictureSize.width, pictureSize.height);
+                            parameters.setPictureSize(pictureSize.width, pictureSize.height);
 
                         // set camera parameters
                         mCamera.setParameters(parameters);
@@ -551,16 +547,16 @@ public class CamerService extends Service implements
             // decode the data obtained by the camera into a Bitmap
             if (bmp != null)
                 bmp.recycle();
-            System.gc();
+
             bmp = decodeBitmap(data);
             ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-            if (bmp != null && QUALITY_MODE == 0)
-                bmp.compress(Bitmap.CompressFormat.JPEG, 70, bytes);
-            else if (bmp != null && QUALITY_MODE != 0)
-                bmp.compress(Bitmap.CompressFormat.JPEG, QUALITY_MODE, bytes);
+//            if (bmp != null && QUALITY_MODE == 0)
+            bmp.compress(Bitmap.CompressFormat.JPEG, 85, bytes);
+//            else if (bmp != null && QUALITY_MODE != 0)
+//                bmp.compress(Bitmap.CompressFormat.JPEG, QUALITY_MODE, bytes);
 
             File imagesFolder = new File(
-                    Environment.getExternalStorageDirectory(), "SpyCameraG");
+                    Environment.getExternalStorageDirectory(), new SharedPrefHelper(CamerService.this).getFolderName());
             if (!imagesFolder.exists())
                 imagesFolder.mkdirs(); // <----
             File image = new File(imagesFolder, System.currentTimeMillis()
@@ -573,8 +569,7 @@ public class CamerService extends Service implements
             }
             catch (Exception e)
             {
-                Log.e("TAG", "FileNotFoundException", e);
-                // TODO Auto-generated catch block
+                e.printStackTrace();
             }
             try
             {
@@ -583,8 +578,7 @@ public class CamerService extends Service implements
             }
             catch (Exception e)
             {
-                Log.e("TAG", "fo.write::PictureTaken", e);
-                // TODO Auto-generated catch block
+                e.printStackTrace();
             }
 
             // remember close de FileOutput
@@ -593,10 +587,10 @@ public class CamerService extends Service implements
                 fo.close();
 
 
-                new NotificationHelper(CamerService.this, Uri.fromFile(image));
+//                new NotificationHelper(CamerService.this, Uri.fromFile(image));
 
 
-                if (Build.VERSION.SDK_INT < 19)
+               /* if (Build.VERSION.SDK_INT < 19)
                     sendBroadcast(new Intent(
                             Intent.ACTION_MEDIA_MOUNTED,
                             Uri.parse("file://"
@@ -619,14 +613,14 @@ public class CamerService extends Service implements
                                                     + uri);
                                         }
                                     });
-                }
+                }*/
 
             }
-            catch (Exception e)
+            catch (Exception | Error e)
             {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
+
             if (mCamera != null)
             {
                 mCamera.stopPreview();
@@ -651,18 +645,11 @@ public class CamerService extends Service implements
                 @Override
                 public void run()
                 {
-
-
-//                    Toast.makeText(getApplicationContext(),
-//                            "Your Picture has been taken !", Toast.LENGTH_SHORT)
-//                            .show();
-
-
                     stopSelf();
 
                 }
             });
-            stopSelf();
+
         }
     };
 
@@ -697,10 +684,7 @@ public class CamerService extends Service implements
         }
         if (sv != null)
             windowManager.removeView(sv);
-        Intent intent = new Intent("custom-event-name");
-        // You can also include some extra data.
-        intent.putExtra("message", "This is my message!");
-        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+
 
         super.onDestroy();
     }

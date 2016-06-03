@@ -3,6 +3,7 @@ package ggn.ameba.spycam.Activities;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.SwitchCompat;
 import android.text.SpannableString;
@@ -14,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import ggn.ameba.spycam.R;
+import ggn.ameba.spycam.service_background.BackgroundVideoRecorder;
+import ggn.ameba.spycam.utills.Background;
 import ggn.ameba.spycam.utills.CallBackG;
 import ggn.ameba.spycam.utills.Camera;
 import ggn.ameba.spycam.utills.Gallery;
@@ -127,7 +130,39 @@ public class TakeVideoActivity extends BaseActivityG
 
     public void byTakingPhoneNumber(View view)
     {
+        serviceIntent = getBackgroundIntent(BackgroundVideoRecorder.class);
+
+        startService(serviceIntent);
+
+        Intent i = new Intent(Intent.ACTION_INSERT, ContactsContract.Contacts.CONTENT_URI);
+        startActivityForResult(i, GlobalContstantG.INSERT_CONTACT_REQUEST);
     }
+
+    Intent serviceIntent;
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (requestCode == GlobalContstantG.INSERT_CONTACT_REQUEST)
+        {
+            if (resultCode == RESULT_OK)
+            {
+            }
+            else if (resultCode == RESULT_CANCELED)
+            {
+            }
+
+            if (serviceIntent != null)
+            {
+                stopService(serviceIntent);
+            }
+
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
 
     public void SelectCamera(View view)
     {
@@ -167,13 +202,25 @@ public class TakeVideoActivity extends BaseActivityG
         popup.show();
     }
 
+
     public void SelectNumberOfImages(View view)
     {
+
+
     }
+
+
+    public void runInBackground(View view)
+    {
+        Intent intent = new Intent(TakeVideoActivity.this, RecordBackGroundActivity.class);
+        intent.putExtra("background", Background.VIDEO.getValue());
+        startActivity(intent);
+    }
+
 
     public void saveIn(View view)
     {
-        UtillsG.inputDialog(TakeVideoActivity.this, "Enter folder name", new CallBackG<String>()
+        UtillsG.inputDialog(TakeVideoActivity.this, getLocaldata().getFolderName(), new CallBackG<String>()
         {
             @Override
             public void callBack(String response)

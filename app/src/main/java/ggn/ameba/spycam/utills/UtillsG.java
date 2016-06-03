@@ -111,7 +111,7 @@ public class UtillsG
         final EditText edText = (EditText) global_dialog.findViewById(R.id.edText);
         Button         ok     = (Button) global_dialog.findViewById(R.id.ok);
 
-        edText.setHint(hint);
+        edText.setText(hint);
 
 
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();

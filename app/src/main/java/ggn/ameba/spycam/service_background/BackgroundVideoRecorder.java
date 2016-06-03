@@ -22,6 +22,7 @@ import android.view.WindowManager;
 import java.io.File;
 
 import ggn.ameba.spycam.R;
+import ggn.ameba.spycam.utills.SharedPrefHelper;
 
 /**
  * Created by gagandeep on 16 May 2016.
@@ -39,12 +40,17 @@ public class BackgroundVideoRecorder extends Service implements SurfaceHolder.Ca
     {
 
         // Start foreground service to avoid unexpected kill
-        Notification notification = new Notification.Builder(this)
-                .setContentTitle("Background Video Recorder")
-                .setContentText("")
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .build();
-        startForeground(1234, notification);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN)
+        {
+            Notification notification = new Notification.Builder(this)
+                    .setContentTitle("Recording Video")
+                    .setContentText("")
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .build();
+            startForeground(1234, notification);
+
+        }
 
         // Create new SurfaceView, set its size to 1x1, move it to the top left corner and set this service as a callback
         windowManager = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
@@ -103,6 +109,33 @@ public class BackgroundVideoRecorder extends Service implements SurfaceHolder.Ca
         return cam;
     }
 
+    private Camera.Size pictureSize;
+
+    private Camera.Size getBiggesttPictureSize(Camera.Parameters parameters)
+    {
+        Camera.Size result = null;
+
+        for (Camera.Size size : parameters.getSupportedVideoSizes())
+        {
+            if (result == null)
+            {
+                result = size;
+            }
+            else
+            {
+                int resultArea = result.width * result.height;
+                int newArea    = size.width * size.height;
+
+                if (newArea > resultArea)
+                {
+                    result = size;
+                }
+            }
+        }
+
+        return (result);
+    }
+
     // Method called right after Surface created (initializing and starting MediaRecorder)
     @Override
     public void surfaceCreated(SurfaceHolder surfaceHolder)
@@ -113,6 +146,23 @@ public class BackgroundVideoRecorder extends Service implements SurfaceHolder.Ca
         mediaRecorder = new MediaRecorder();
         camera.unlock();
 
+
+//        try
+//        {
+//            Camera.Parameters parameters = camera.getParameters();
+//            pictureSize = getBiggesttPictureSize(parameters);
+//            if (pictureSize != null)
+//                parameters.setPreviewSize(pictureSize.width, pictureSize.height);
+//
+//            // set camera parameters
+//            camera.setParameters(parameters);
+//        }
+//        catch (Exception e)
+//        {
+//            e.printStackTrace();
+//        }
+
+
         mediaRecorder.setPreviewDisplay(surfaceHolder.getSurface());
         mediaRecorder.setCamera(camera);
         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
@@ -121,7 +171,7 @@ public class BackgroundVideoRecorder extends Service implements SurfaceHolder.Ca
 
 
         File imagesFolder = new File(
-                Environment.getExternalStorageDirectory(), "SpyCameraG");
+                Environment.getExternalStorageDirectory(), new SharedPrefHelper(this).getFolderName());
         if (!imagesFolder.exists())
             imagesFolder.mkdirs(); // <----
 
@@ -131,6 +181,7 @@ public class BackgroundVideoRecorder extends Service implements SurfaceHolder.Ca
 
 
         mediaRecorder.setOutputFile(image.getAbsolutePath());
+
 
         try
         {
