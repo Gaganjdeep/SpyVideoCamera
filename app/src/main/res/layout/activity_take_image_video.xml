@@ -79,7 +79,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="By Showing Pictures"
+                            android:text="@string/by_showing_pictures"
                             android:textColor="@color/black"
                             android:textSize="@dimen/title"
                             android:textStyle="bold"/>
@@ -123,7 +123,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="By Showing Video's"
+                            android:text="@string/by_showing_video_s"
                             android:textColor="@color/black"
                             android:textSize="@dimen/title"
                             android:textStyle="bold"/>
@@ -167,7 +167,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="By taking victim phone number"
+                            android:text="@string/by_taking_victim_phone_number"
                             android:textColor="@color/black"
                             android:textSize="@dimen/title"
                             android:textStyle="bold"/>
@@ -211,7 +211,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Run Application in Background"
+                            android:text="@string/run_application_in_background"
                             android:textColor="@color/black"
                             android:textSize="@dimen/title"
                             android:textStyle="bold"/>
@@ -266,7 +266,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Select Camera"
+                            android:text="@string/select_camera"
                             android:textColor="@color/black"
                             android:textSize="@dimen/title"
                             android:textStyle="bold"/>
@@ -313,7 +313,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Number Of Image Taking"
+                            android:text="@string/number_of_image_taking"
                             android:textColor="@color/black"
                             android:textSize="@dimen/title"
                             android:textStyle="bold"/>
@@ -359,7 +359,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Save In"
+                            android:text="@string/save_in"
                             android:textColor="@color/black"
                             android:textSize="@dimen/title"
                             android:textStyle="bold"/>
@@ -392,7 +392,7 @@
                         android:id="@+id/switchbtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Flash"
+                        android:text="@string/flash"
                         android:textColor="@color/black"
                         android:textSize="@dimen/title"
                         android:textStyle="bold"/>

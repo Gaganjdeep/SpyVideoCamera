@@ -76,7 +76,7 @@
                     android:background="@android:color/transparent"
                     android:drawableTop="@drawable/ic_menu_camera"
                     android:gravity="center"
-                    android:text="Take Image"
+                    android:text="@string/take_image"
                     android:textColor="@color/white"
                     android:textSize="@dimen/title"
                     android:textStyle="bold"/>
@@ -99,7 +99,7 @@
                     android:background="@android:color/transparent"
                     android:drawableTop="@drawable/ic_video"
                     android:gravity="center"
-                    android:text="Record Video"
+                    android:text="@string/record_video"
                     android:textColor="@color/white"
                     android:textSize="@dimen/title"
                     android:textStyle="bold"/>
@@ -130,7 +130,7 @@
                     android:background="@android:color/transparent"
                     android:drawableTop="@drawable/ic_audio"
                     android:gravity="center"
-                    android:text="Audio Recorder"
+                    android:text="@string/audio_recorder"
                     android:textColor="@color/white"
                     android:textSize="@dimen/title"
                     android:textStyle="bold"/>
@@ -153,7 +153,7 @@
                     android:background="@android:color/transparent"
                     android:drawableTop="@drawable/ic_heart"
                     android:gravity="center"
-                    android:text="Get more similar app"
+                    android:text="@string/get_more_similar_app"
                     android:textColor="@color/white"
                     android:textSize="@dimen/title"
                     android:textStyle="bold"/>
@@ -183,7 +183,7 @@
                     android:background="@android:color/transparent"
                     android:drawableTop="@drawable/ic_settings"
                     android:gravity="center"
-                    android:text="Settings"
+                    android:text="@string/settings"
                     android:textColor="@color/white"
                     android:textSize="@dimen/title"
                     android:textStyle="bold"/>
@@ -206,7 +206,7 @@
                     android:background="@android:color/transparent"
                     android:drawableTop="@drawable/ic_help"
                     android:gravity="center"
-                    android:text="Help"
+                    android:text="@string/help"
                     android:textColor="@color/white"
                     android:textSize="@dimen/title"
                     android:textStyle="bold"/>

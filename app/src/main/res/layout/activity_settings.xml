@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:gravity="center"
-            android:text="Settings"
+            android:text="@string/settings"
             android:textColor="@color/white"
             android:textSize="@dimen/title"
             android:textStyle="bold"/>
@@ -73,7 +73,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Choose Language"
+                        android:text="@string/choose_language"
                         android:textColor="@color/black"
                         android:textSize="@dimen/title"
                         android:textStyle="bold"/>
@@ -113,7 +113,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Comment for the Application"
+                        android:text="@string/comment_for_the_application"
                         android:textColor="@color/black"
                         android:textSize="@dimen/title"
                         android:textStyle="bold"/>
@@ -154,7 +154,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Info"
+                        android:text="@string/info"
                         android:textColor="@color/black"
                         android:textSize="@dimen/title"
                         android:textStyle="bold"/>
@@ -197,7 +197,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Share this Application"
+                        android:text="@string/share_this_application"
                         android:textColor="@color/black"
                         android:textSize="@dimen/title"
                         android:textStyle="bold"/>
@@ -287,7 +287,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Contact Us"
+                        android:text="@string/contact_us"
                         android:textColor="@color/black"
                         android:textSize="@dimen/title"
                         android:textStyle="bold"/>

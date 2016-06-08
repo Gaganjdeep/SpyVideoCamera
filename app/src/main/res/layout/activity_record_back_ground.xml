@@ -9,12 +9,12 @@
 
 
     <ImageView
-        android:onClick="playPause"
         android:id="@+id/btnPlayPause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_play"
-        android:backgroundTint="?colorAccent"/>
+        android:onClick="playPause"
+        android:src="@drawable/ic_play"
+        android:tint="?colorAccent"/>
 
 
 </LinearLayout>
