@@ -3,6 +3,7 @@ package ggn.ameba.spycam.Activities;
 import android.animation.Animator;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
@@ -15,6 +16,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.LinearLayout;
 
 import ggn.ameba.spycam.R;
+import ggn.ameba.spycam.utills.SharedPrefHelper;
 import ggn.ameba.spycam.utills.UtillsG;
 
 public class MainActivity extends AppCompatActivity
@@ -23,14 +25,18 @@ public class MainActivity extends AppCompatActivity
     private View revealView;
 
 
+    public static MainActivity mainActivity;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        UtillsG.changeLanguage(MainActivity.this, (new SharedPrefHelper(MainActivity.this)).getlanguage());
         setContentView(R.layout.activity_main);
 
 //        TableLayout tablelayout = (TableLayout) findViewById(R.id.tablelayout);
-
+        mainActivity=this;
         revealView = (View) findViewById(R.id.revealView);
 
 
@@ -107,6 +113,7 @@ public class MainActivity extends AppCompatActivity
             {
 
             }
+
             @Override
             public void onAnimationRepeat(Animator animator)
             {
@@ -173,10 +180,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume()
     {
+
         if (revealView.getVisibility() == View.VISIBLE)
         {
             revealRewind();
         }
+
         super.onResume();
     }
 
@@ -205,6 +214,12 @@ public class MainActivity extends AppCompatActivity
     {
 //        Intent intent = new Intent(MainActivity.this, MainActivity.class);
         animateRevealColor(view, R.color.bluish, null);
+
+
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse("https://play.google.com/store/apps/developer?id=Valerie+Evans"));
+        startActivity(i);
+
     }
 
     public void seTTings(View view)
@@ -215,7 +230,7 @@ public class MainActivity extends AppCompatActivity
 
     public void heLp(View view)
     {
-//        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-        animateRevealColor(view, R.color.yellowlast, null);
+        Intent intent = new Intent(MainActivity.this, HelpActivity.class);
+        animateRevealColor(view, R.color.yellowlast, intent);
     }
 }

@@ -1,11 +1,10 @@
 package ggn.ameba.spycam.Activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import ggn.ameba.spycam.R;
 
-public class HelpActivity extends AppCompatActivity
+public class HelpActivity extends BaseActivityG
 {
 
     @Override

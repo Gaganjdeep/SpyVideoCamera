@@ -28,5 +28,6 @@ public class RecordAudioActivity extends BaseActivityG
 
     public void bySendingSMS(View view)
     {
+
     }
 }

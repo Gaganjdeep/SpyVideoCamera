@@ -1,9 +1,17 @@
 package ggn.ameba.spycam.Activities;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
 
 import ggn.ameba.spycam.R;
 import ggn.ameba.spycam.service_background.AudioRecorderService;
@@ -11,14 +19,15 @@ import ggn.ameba.spycam.service_background.BackgroundVideoRecorder;
 import ggn.ameba.spycam.service_background.CamerService;
 import ggn.ameba.spycam.utills.Background;
 import ggn.ameba.spycam.utills.Gallery;
+import ggn.ameba.spycam.utills.ReceiverCamera;
 
 public class RecordBackGroundActivity extends BaseActivityG
 {
 
     Background background;
 
-
-    Intent serviceIntent;
+    ReceiverCamera receiverCamera;
+    Intent         serviceIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,24 +40,9 @@ public class RecordBackGroundActivity extends BaseActivityG
             case IMAGE:
                 setTheme(R.style.AppThemeCamera);
 
-                serviceIntent = new Intent(RecordBackGroundActivity.this, CamerService.class);
-                serviceIntent.putExtra("Quality_Mode", 0);
-                if (!getLocaldata().isFrontCamCamera())
-                {
-                    if (getLocaldata().isFlashOnCamera())
-                    {
-                        serviceIntent.putExtra("FLASH", "auto");
-                    }
-                    else
-                    {
-                        serviceIntent.putExtra("FLASH", "off");
-                    }
-                    serviceIntent.putExtra("Front_Request", false);
-                }
-                else
-                {
-                    serviceIntent.putExtra("Front_Request", true);
-                }
+                serviceIntent = getBackgroundIntent(CamerService.class);
+
+                receiverCamera = new ReceiverCamera();
 
 
                 break;
@@ -56,24 +50,7 @@ public class RecordBackGroundActivity extends BaseActivityG
                 setTheme(R.style.AppThemeVideo);
 
 
-                serviceIntent = new Intent(RecordBackGroundActivity.this, BackgroundVideoRecorder.class);
-                serviceIntent.putExtra("Quality_Mode", 0);
-                if (!getLocaldata().isFrontCamCamera())
-                {
-                    if (getLocaldata().isFlashOnCamera())
-                    {
-                        serviceIntent.putExtra("FLASH", "auto");
-                    }
-                    else
-                    {
-                        serviceIntent.putExtra("FLASH", "off");
-                    }
-                    serviceIntent.putExtra("Front_Request", false);
-                }
-                else
-                {
-                    serviceIntent.putExtra("Front_Request", true);
-                }
+                serviceIntent = getBackgroundIntent(BackgroundVideoRecorder.class);
 
 
                 break;
@@ -86,6 +63,15 @@ public class RecordBackGroundActivity extends BaseActivityG
         setContentView(R.layout.activity_record_back_ground);
 
 
+        if (receiverCamera != null)
+        {
+            registerReceiver(receiverCamera, new IntentFilter(ReceiverCamera.CLICK_IMAGE));
+        }
+
+
+        CamerService.count = 0;
+
+
     }
 
 
@@ -94,7 +80,7 @@ public class RecordBackGroundActivity extends BaseActivityG
 
     public void playPause(View view)
     {
-        view.setBackgroundResource(play ? R.drawable.ic_stop : R.drawable.ic_play);
+        ((ImageView) view).setImageResource(play ? R.drawable.ic_stop : R.drawable.ic_play);
 
         if (play)
         {
@@ -113,10 +99,17 @@ public class RecordBackGroundActivity extends BaseActivityG
     @Override
     protected void onDestroy()
     {
+
         if (serviceIntent != null)
         {
             stopService(serviceIntent);
         }
+
+        if (receiverCamera != null)
+        {
+            unregisterReceiver(receiverCamera);
+        }
+
         super.onDestroy();
     }
 }

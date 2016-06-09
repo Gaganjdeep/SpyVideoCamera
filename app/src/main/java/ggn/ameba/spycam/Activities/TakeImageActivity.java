@@ -1,6 +1,7 @@
 package ggn.ameba.spycam.Activities;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -16,13 +17,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import ggn.ameba.spycam.R;
-import ggn.ameba.spycam.service_background.BackgroundVideoRecorder;
 import ggn.ameba.spycam.service_background.CamerService;
 import ggn.ameba.spycam.utills.Background;
 import ggn.ameba.spycam.utills.CallBackG;
 import ggn.ameba.spycam.utills.Camera;
 import ggn.ameba.spycam.utills.Gallery;
 import ggn.ameba.spycam.utills.GlobalContstantG;
+import ggn.ameba.spycam.utills.ReceiverCamera;
 import ggn.ameba.spycam.utills.UtillsG;
 
 public class TakeImageActivity extends BaseActivityG
@@ -35,12 +36,28 @@ public class TakeImageActivity extends BaseActivityG
 
     private SwitchCompat switchbtn;
 
+
+    ReceiverCamera receiverCamera;
+
+    @Override
+    protected void onDestroy()
+    {
+        unregisterReceiver(receiverCamera);
+        super.onDestroy();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_image_video);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+
+        receiverCamera = new ReceiverCamera();
+
+        registerReceiver(receiverCamera, new IntentFilter(ReceiverCamera.CLICK_IMAGE));
+
 
         findViewbyID();
 
@@ -97,6 +114,8 @@ public class TakeImageActivity extends BaseActivityG
 
     public void byTakingPhoneNumber(View view)
     {
+        CamerService.count = 0;
+
         serviceIntent = getBackgroundIntent(CamerService.class);
 
         startService(serviceIntent);

@@ -2,14 +2,19 @@ package ggn.ameba.spycam.utills;
 
 import android.animation.Animator;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Build;
 import android.support.annotation.ColorRes;
 import android.support.v4.content.ContextCompat;
+import android.util.DisplayMetrics;
 import android.util.Pair;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
@@ -18,6 +23,9 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Locale;
 
 import ggn.ameba.spycam.R;
 
@@ -139,6 +147,67 @@ public class UtillsG
                 }
             }
         });
+    }
+
+
+    public static boolean isMyServiceRunning(Class<?> serviceClass, Context context)
+    {
+        ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE))
+        {
+            if (serviceClass.getName().equals(service.service.getClassName()))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public static Toast toastG;
+
+
+    public static void showToast(String msg, Context context, boolean center)
+    {
+        if (toastG != null)
+        {
+            toastG.cancel();
+        }
+        toastG = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
+        if (center)
+        {
+            toastG.setGravity(Gravity.CENTER, 0, 0);
+        }
+
+        toastG.show();
+
+    }
+
+
+
+    public static void changeLanguage(Context context, String lang)
+    {
+//        Locale         myLocale = new Locale(lang);
+//        Resources      res      = context.getResources();
+//        DisplayMetrics dm       = res.getDisplayMetrics();
+//        Configuration  conf     = res.getConfiguration();
+//        conf.locale = myLocale;
+//        res.updateConfiguration(conf, dm);
+
+//
+//        Locale locale = new Locale(lang);
+//        Locale.setDefault(locale);
+//        Configuration config = new Configuration();
+//        config.locale = locale;
+//        context.getResources().updateConfiguration(config,
+//                context.getResources().getDisplayMetrics());
+        Resources res = context.getResources();
+        // Change locale settings in the app.
+        DisplayMetrics                    dm   = res.getDisplayMetrics();
+        android.content.res.Configuration conf = res.getConfiguration();
+        conf.locale = new Locale(lang.toLowerCase());
+        res.updateConfiguration(conf, dm);
+
     }
 
 

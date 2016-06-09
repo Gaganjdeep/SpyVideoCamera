@@ -131,5 +131,36 @@ public class SharedPrefHelper
         return shared.getBoolean("frontCamCamera", true);
     }
 
-//    CAM SELECTION STUFF END
+
+    public void setMsgAudioRecording(boolean frontCam)
+    {
+        SharedPreferences.Editor ed = shared.edit();
+        ed.putBoolean("MsgAudioRecording", frontCam);
+        ed.apply();
+    }
+
+
+    public boolean isMsgAudioRecording()
+    {
+        return shared.getBoolean("MsgAudioRecording", true);
+    }
+
+
+    //    set language
+
+    public void setLanguage(String language)
+    {
+        SharedPreferences.Editor ed = shared.edit();
+        ed.putString("language", language);
+        ed.apply();
+    }
+
+
+    public String getlanguage()
+    {
+        return shared.getString("language", "en");
+    }
+    //    set language END
+
+
 }

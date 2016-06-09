@@ -25,9 +25,14 @@
     <string name="by_sending_sms">By Sending SMS</string>
 
 
+    <string name="front">Front</string>
+    <string name="rear">Rear</string>
 
 
-    <string name="info_text">Have you ever wondered if you could take a picture of a sexy girl, who gave you her phone number or has set next to you one day in the metro… and you wanted absolutely to show her to your best friends. weal, to day it's possible we have developed an application that can allow you to take photo of sexy girls without anyone noticing. \n\n
+
+
+
+    <string name="info_text">Have you ever wondered if you could take a picture of a sexy girl, who gave you her phone number or has set next to you one day in the metro… and you wanted absolutely to show her to your best friends. weal, to day it\'s possible we have developed an application that can allow you to take photo of sexy girls without anyone noticing. \n\n
 ©Valrie Evans Company. All rights reserved.</string>
 
 
@@ -37,6 +42,6 @@
 -You can ask your target for her\his phone number… the app will record his\her video or take pictures at the same time when his\her taping the phone number ( the phone number will also be added in your contacts . \n\n
 -you can start recording the application on background and "reduce
 " the app so you can take images or record video in background.  \n\n
--you can also record voice in background or start recording whene your phone receive a SMS "Start recording" send by any number</string>
+-you can also record voice in background or start recording when your phone receive a SMS "Start recording" send by any number</string>
 
 </resources>

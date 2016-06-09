@@ -25,20 +25,25 @@
     <string name="flash">Flach</string>
 
     <string name="record_in_background">Enregistrement Audio en Arrière Plan</string>
-    <string name="by_sending_sms">par réception d'un SMS</string>
+    <string name="by_sending_sms">par réception d\'un SMS</string>
+
+
+    <string name="front">Avant</string>
+    <string name="rear">arrière</string>
 
 
 
 
-    <string name="info_text">A tu jamais demandé si vous pouvais prendre une photo d'une fille sexy qui t'a donnais sont numéro de téléphone ou qui a étée assise avec toi un jour dans le metro, et vous vouliez absolument la monter a votre meilleurs potes....aujourd'hui c'est possible garce a cette application vous pouvais prendre la photo de n'importe qu'elle fille sans que personne ne remarque. \n\n
+
+    <string name="info_text">A tu jamais demandé si vous pouvais prendre une photo d\'une fille sexy qui t\'a donnais sont numéro de téléphone ou qui a étée assise avec toi un jour dans le metro, et vous vouliez absolument la monter a votre meilleurs potes....aujourd\'hui c\'est possible garce a cette application vous pouvais prendre la photo de n\'importe qu\'elle fille sans que personne ne remarque. \n\n
 ©Valrie Evans Company. All rights reserved.</string>
 
 
 
-    <string name="help_text">Cette application vous permettra de prendre des photos, enregistrer une vidéo et l'enregistrement audio afin d'espionner les filles sexy. \n\n
-- Vous pouvez montrer que vous ciblez des images ou vidéo et l'application sera la prendre / ses photos ou vidéo en même temps \n\n
--Vous Pouvez demander à votre cible pour son / son numéro de téléphone … l'application va enregistrer son / sa vidéo ou prendre des photos en même temps quand son / sa taping le numéro de téléphone (le numéro de téléphone sera également ajouté dans vos contacts \n\n
--Vous pouvez commencer à enregistrer l'application sur fond et "Reduir" l'application de sorte que vous pouvez prendre des photos ou enregistrer des vidéos en arrière-plan \n\n
--Vous pouvez également enregistrer la voix en arrière-plan ou commencer à enregistrer whene votre téléphone recevoir un SMS "Démarrer l'enregistrement" sendet par un nombre quelconque</string>
+    <string name="help_text">Cette application vous permettra de prendre des photos, enregistrer une vidéo et l\'enregistrement audio afin d\'espionner les filles sexy. \n\n
+- Vous pouvez montrer que vous ciblez des images ou vidéo et l\'application sera la prendre / ses photos ou vidéo en même temps \n\n
+-Vous Pouvez demander à votre cible pour son / son numéro de téléphone … l\'application va enregistrer son / sa vidéo ou prendre des photos en même temps quand son / sa taping le numéro de téléphone (le numéro de téléphone sera également ajouté dans vos contacts \n\n
+-Vous pouvez commencer à enregistrer l\'application sur fond et "Reduir" l\'application de sorte que vous pouvez prendre des photos ou enregistrer des vidéos en arrière-plan \n\n
+-Vous pouvez également enregistrer la voix en arrière-plan ou commencer à enregistrer whene votre téléphone recevoir un SMS "Démarrer l\'enregistrement" sendet par un nombre quelconque</string>
 
 </resources>

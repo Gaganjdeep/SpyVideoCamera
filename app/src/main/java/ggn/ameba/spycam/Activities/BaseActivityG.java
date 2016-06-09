@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import ggn.ameba.spycam.service_background.CamerService;
 import ggn.ameba.spycam.utills.SharedPrefHelper;
+import ggn.ameba.spycam.utills.UtillsG;
 
 /**
  * Created by gagandeep on 24 May 2016.
@@ -20,6 +20,7 @@ public class BaseActivityG extends AppCompatActivity
     {
         localdata = new SharedPrefHelper(getApplicationContext());
 
+        UtillsG.changeLanguage(this, getLocaldata().getlanguage());
         super.onCreate(savedInstanceState);
     }
 

@@ -3,6 +3,7 @@ package ggn.ameba.spycam.Activities;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -17,6 +18,7 @@ import ggn.ameba.spycam.R;
 import ggn.ameba.spycam.service_background.BackgroundVideoRecorder;
 import ggn.ameba.spycam.service_background.CamerService;
 import ggn.ameba.spycam.utills.Gallery;
+import ggn.ameba.spycam.utills.ReceiverCamera;
 
 public class ShowGalleryActivity extends BaseActivityG
 {
@@ -29,6 +31,8 @@ public class ShowGalleryActivity extends BaseActivityG
 
     private Class serviceClass;
 
+
+    ReceiverCamera receiverCamera;
 
     boolean isCamera = false;
 
@@ -52,6 +56,9 @@ public class ShowGalleryActivity extends BaseActivityG
                 serviceClass = CamerService.class;
                 isCamera = true;
 
+
+                receiverCamera = new ReceiverCamera();
+
                 break;
 
             case VIDEO_CLICK:
@@ -64,6 +71,9 @@ public class ShowGalleryActivity extends BaseActivityG
 
                 serviceClass = CamerService.class;
                 isCamera = true;
+
+
+                receiverCamera = new ReceiverCamera();
 
                 break;
 
@@ -95,7 +105,13 @@ public class ShowGalleryActivity extends BaseActivityG
         setContentView(R.layout.activity_show_gallery);
 
 
-        imageCount = getLocaldata().getNumberOfImages();
+        if (receiverCamera != null)
+        {
+            registerReceiver(receiverCamera, new IntentFilter(ReceiverCamera.CLICK_IMAGE));
+        }
+
+
+        CamerService.count = 0;
 
         getLocaldata().setCurrentTheme(theme);
 
@@ -108,7 +124,7 @@ public class ShowGalleryActivity extends BaseActivityG
     }
 
 
-    private ServiceConnection mConnection = new ServiceConnection()
+    /*private ServiceConnection mConnection = new ServiceConnection()
     {
         public void onServiceConnected(ComponentName className, IBinder service)
         {
@@ -138,10 +154,10 @@ public class ShowGalleryActivity extends BaseActivityG
 
 
         }
-    };
+    };*/
 
 
-    int imageCount = 1;
+//    int imageCount = 1;
 
 
     Intent serviceIntent;
@@ -167,6 +183,12 @@ public class ShowGalleryActivity extends BaseActivityG
     protected void onDestroy()
     {
         doUnbindService();
+
+        if (receiverCamera != null)
+        {
+            unregisterReceiver(receiverCamera);
+        }
+
         super.onDestroy();
     }
 

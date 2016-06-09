@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="ggn.ameba.spycam"
-          xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CAMERA"/>
@@ -10,6 +9,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.RECORD_VIDEO"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
 
     <application
         android:name=".CustomGallery.ApplicationOwnGallery"
@@ -23,6 +23,7 @@
         <service android:name=".service_background.BackgroundVideoRecorder"/>
 
         <activity
+            android:configChanges="locale"
             android:name=".Activities.SplashActivity"
             android:noHistory="true">
             <intent-filter>
@@ -32,30 +33,36 @@
             </intent-filter>
         </activity>
         <activity
+            android:configChanges="locale"
             android:name=".Activities.MainActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
+            android:configChanges="locale"
             android:name=".Activities.TakeImageActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeCamera">
         </activity>
         <activity
+            android:configChanges="locale"
             android:name=".Activities.TakeVideoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeVideo">
         </activity>
         <activity
+            android:configChanges="locale"
             android:name=".Activities.RecordAudioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeAudio">
         </activity>
         <activity
+            android:configChanges="locale"
             android:name=".Activities.SettingsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeSettings">
         </activity>
         <activity
+            android:configChanges="locale"
             android:name=".CustomGallery.GalleryActivites.AlbumActivity"
             android:screenOrientation="portrait">
         </activity>
@@ -63,11 +70,30 @@
         </activity>
         <activity
             android:name=".Activities.ShowGalleryActivity"
+            android:configChanges="locale"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".Activities.RecordBackGroundActivity"
+            android:configChanges="locale"
             android:theme="@style/AppThemeAudio">
+        </activity>
+
+        <receiver android:name=".service_background.SmsListener">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".Activities.InfoActivity"
+            android:configChanges="locale"
+            android:theme="@style/Base.Theme.AppCompat.Dialog">
+        </activity>
+        <activity
+            android:name=".Activities.HelpActivity"
+            android:configChanges="locale"
+            android:theme="@style/Base.Theme.AppCompat.Dialog">
         </activity>
     </application>
 

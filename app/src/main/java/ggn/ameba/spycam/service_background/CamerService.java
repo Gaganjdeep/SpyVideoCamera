@@ -26,7 +26,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 
+import ggn.ameba.spycam.utills.ReceiverCamera;
 import ggn.ameba.spycam.utills.SharedPrefHelper;
+import ggn.ameba.spycam.utills.UtillsG;
 
 /**
  * Created by gagandeep on 23 Mar 2016.
@@ -56,6 +58,10 @@ public class CamerService extends Service implements
     SharedPreferences        pref;
     SharedPreferences.Editor editor;
     int width = 0, height = 0;
+
+
+    public static int countTotal;
+    public static int count;
 
     /**
      * Called when the activity is first created.
@@ -506,6 +512,9 @@ public class CamerService extends Service implements
     @Override
     public int onStartCommand(Intent intent, int flags, int startId)
     {
+
+        countTotal = new SharedPrefHelper(CamerService.this).getNumberOfImages();
+
         // sv = new SurfaceView(getApplicationContext());
         cameraIntent = intent;
         pref = getApplicationContext().getSharedPreferences("MyPref", 0);
@@ -639,19 +648,31 @@ public class CamerService extends Service implements
                 System.gc();
             }
             mCamera = null;
+
+
             handler.post(new Runnable()
             {
-
                 @Override
                 public void run()
                 {
-                    stopSelf();
 
+                    count++;
+                    if (count < countTotal)
+                    {
+                        sendBroadcast(new Intent(ReceiverCamera.CLICK_IMAGE));
+                    }
+                    else
+                    {
+                        count = 0;
+                    }
+
+                    stopSelf();
                 }
             });
 
         }
     };
+
 
     @Override
     public IBinder onBind(Intent intent)

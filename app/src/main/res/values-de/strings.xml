@@ -5,18 +5,8 @@
     <string name="record_video">Video aufzeichnen</string>
     <string name="audio_recorder">Sprachmemos</string>
     <string name="get_more_similar_app">Erhalten mehr App</string>
-    <string name="settings">einstellungen</string>
+    <string name="settings">Einstellungen</string>
     <string name="help">Hilfe</string>
-
-
-
-
-
-
-
-
-
-
 
 
     <string name="choose_language">Wähle eine Sprache</string>
@@ -26,26 +16,23 @@
     <string name="contact_us">Kontaktiere uns</string>
 
 
-
-
-
-
-
-
-
-
-
-    <string name="by_showing_pictures">By Showing Pictures</string>
-    <string name="by_showing_video_s">By Showing Video\'s</string>
-    <string name="by_taking_victim_phone_number">By taking victim phone number</string>
-    <string name="run_application_in_background">Run Application in Background</string>
-    <string name="select_camera">Select Camera</string>
+    <string name="by_showing_pictures">Durch zeigen Bilder</string>
+    <string name="by_showing_video_s">Durch zeigen video</string>
+    <string name="by_taking_victim_phone_number">Durch nehmen die telefonnummer von Ihrem Freund</string>
+    <string name="run_application_in_background">Die App im Hintergrund laufen</string>
+    <string name="select_camera">wählen Sie Kamera aus</string>
     <string name="number_of_image_taking">Number Of Image Taking</string>
-    <string name="save_in">Save In</string>
-    <string name="flash">Flash</string>
+    <string name="save_in">Speichern unter</string>
+    <string name="flash">Blitz</string>
 
-    <string name="record_in_background">Record in Background</string>
-    <string name="by_sending_sms">By Sending SMS</string>
+
+    <string name="record_in_background">Sprachmemos im hintergrund laufen</string>
+    <string name="by_sending_sms">durch eine SMS-Empfang</string>
+
+
+
+    <string name="front">vordere</string>
+    <string name="rear">hintere</string>
 
 
 

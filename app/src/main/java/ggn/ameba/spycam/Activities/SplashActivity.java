@@ -8,8 +8,9 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import ggn.ameba.spycam.R;
+import ggn.ameba.spycam.utills.UtillsG;
 
-public class SplashActivity extends AppCompatActivity
+public class SplashActivity extends BaseActivityG
 {
 
     @Override
