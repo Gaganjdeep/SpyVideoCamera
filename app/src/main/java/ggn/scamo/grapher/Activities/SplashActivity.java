@@ -28,7 +28,6 @@ public class SplashActivity extends BaseActivityG
 
 
         startUp();
-ghfhgfhgf
     }
 
 
