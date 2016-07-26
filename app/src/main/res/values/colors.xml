@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1F363C</color>
-    <color name="colorPrimaryDark">#172b30</color>
-    <color name="colorAccent">#1F363C</color>
+    <color name="colorPrimary">#36465d</color>
+    <color name="colorPrimaryDark">#283343</color>
+    <color name="colorAccent">#36465d</color>
     <color name="white">#ffffff</color>
     <color name="black">#000</color>
     <color name="grey_light">#B1B6BF</color>
@@ -12,7 +12,7 @@
     <color name="ligtblue_dark">#517169</color>
 
 
-    <color name="yellowish">#FCCA24</color>
+    <color name="yellowish">#ff5e00</color>
     <color name="yellowish_dark">#ae8a17</color>
 
 
@@ -24,10 +24,18 @@
 
 
     <color name="grenish">#AEC447</color>
-    <color name="grenish_dark">#748332</color>
+    <color name="grenish_dark">#39831c</color>
 
 
     <color name="yellowlast">#F29F23</color>
+
+
+    <color name="camerag">#ff6d00</color>
+    <color name="videog">#ffa726</color>
+    <color name="audiog">#fc338d</color>
+    <color name="settingsg">#5aca2e</color>
+    <color name="helpg">#40c4ff</color>
+
 
 
 </resources>

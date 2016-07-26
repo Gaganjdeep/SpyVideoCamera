@@ -5,8 +5,8 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "gagan.ameba.spycamera"
-        minSdkVersion 11
+        applicationId "ggn.scamo.grapher"
+        minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -32,4 +32,11 @@ dependencies {
     compile 'com.android.support:design:23.2.1'
     compile files('libs/universal-image-loader-1.9.2-SNAPSHOT-with-sources.jar')
     compile project(path: ':gestureimgg')
+
+
+
+
+    compile 'com.tiancaicc.springfloatingactionmenu:library:0.0.1'
+
+
 }

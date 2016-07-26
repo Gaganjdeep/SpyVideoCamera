@@ -51,9 +51,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:gravity="center_vertical"
                 android:onClick="chooseLanguage"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
                 android:padding="20dp">
 
 
@@ -79,7 +79,6 @@
                         android:textStyle="bold"/>
 
 
-
                 </LinearLayout>
 
 
@@ -87,20 +86,19 @@
 
 
             <LinearLayout
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="@color/white"
-                android:onClick="comMent"
+                android:onClick="saveIn"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
                 android:padding="20dp">
 
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_cmnts"
+                    android:src="@drawable/ic_save"
                     android:tint="?colorAccent"/>
 
                 <LinearLayout
@@ -113,11 +111,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/comment_for_the_application"
+                        android:text="@string/save_in"
                         android:textColor="@color/black"
                         android:textSize="@dimen/title"
                         android:textStyle="bold"/>
 
+                    <TextView
+                        android:id="@+id/tvFolderName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Folder name"
+                        android:textColor="@color/black"
+                        android:textStyle="italic"/>
 
 
                 </LinearLayout>
@@ -126,15 +131,61 @@
             </LinearLayout>
 
 
-
             <LinearLayout
-                android:layout_marginTop="10dp"
+                android:id="@+id/layoutNumberOfImages"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="@color/white"
+                android:onClick="SelectDelayOfImageCapture"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_imagestack"
+                    android:tint="?colorAccent"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time delay between image capturing"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/title"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tvImageCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="count"
+                        android:textColor="@color/black"
+                        android:textStyle="italic"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
                 android:onClick="inFo"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
                 android:padding="20dp">
 
 
@@ -160,24 +211,20 @@
                         android:textStyle="bold"/>
 
 
-
                 </LinearLayout>
 
 
             </LinearLayout>
 
 
-
-
-
             <LinearLayout
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="@color/white"
+                android:gravity="center_vertical"
                 android:onClick="shAre"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
                 android:padding="20dp">
 
 
@@ -203,26 +250,22 @@
                         android:textStyle="bold"/>
 
 
-
                 </LinearLayout>
 
 
             </LinearLayout>
 
 
-
-
-
             <LinearLayout
-                android:visibility="gone"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="@color/white"
+                android:gravity="center_vertical"
                 android:onClick="recordBackground"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="20dp">
+                android:padding="20dp"
+                android:visibility="gone">
 
 
                 <ImageView
@@ -250,24 +293,14 @@
             </LinearLayout>
 
 
-
-
-
-
-
-
-
-
-
-
             <LinearLayout
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="@color/white"
+                android:gravity="center_vertical"
                 android:onClick="contactUs"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
                 android:padding="20dp">
 
 
@@ -293,19 +326,10 @@
                         android:textStyle="bold"/>
 
 
-
                 </LinearLayout>
 
 
             </LinearLayout>
-
-
-
-
-
-
-
-
 
 
         </LinearLayout>

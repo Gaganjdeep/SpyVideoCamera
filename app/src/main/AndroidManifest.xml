@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="ggn.ameba.spycam"
+<manifest package="ggn.scamo.grapher"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -12,19 +12,19 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
 
     <application
-        android:name=".CustomGallery.ApplicationOwnGallery"
+        android:name="ggn.scamo.grapher.CustomGallery.ApplicationOwnGallery"
         android:allowBackup="true"
         android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service android:name=".service_background.CamerService"/>
-        <service android:name=".service_background.AudioRecorderService"/>
-        <service android:name=".service_background.BackgroundVideoRecorder"/>
+        <service android:name="ggn.scamo.grapher.service_background.CamerService"/>
+        <service android:name="ggn.scamo.grapher.service_background.AudioRecorderService"/>
+        <service android:name="ggn.scamo.grapher.service_background.BackgroundVideoRecorder"/>
 
         <activity
+            android:name="ggn.scamo.grapher.Activities.SplashActivity"
             android:configChanges="locale"
-            android:name=".Activities.SplashActivity"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -33,67 +33,64 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="ggn.scamo.grapher.Activities.TakeImageActivity"
             android:configChanges="locale"
-            android:name=".Activities.MainActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:configChanges="locale"
-            android:name=".Activities.TakeImageActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeCamera">
         </activity>
         <activity
+            android:name="ggn.scamo.grapher.Activities.TakeVideoActivity"
             android:configChanges="locale"
-            android:name=".Activities.TakeVideoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeVideo">
         </activity>
         <activity
+            android:name="ggn.scamo.grapher.Activities.RecordAudioActivity"
             android:configChanges="locale"
-            android:name=".Activities.RecordAudioActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeAudio">
         </activity>
         <activity
+            android:name="ggn.scamo.grapher.Activities.SettingsActivity"
             android:configChanges="locale"
-            android:name=".Activities.SettingsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeSettings">
         </activity>
         <activity
-            android:configChanges="locale"
-            android:name=".CustomGallery.GalleryActivites.AlbumActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".CustomGallery.GalleryActivites.PhotoPreviewActivity">
-        </activity>
-        <activity
-            android:name=".Activities.ShowGalleryActivity"
+            android:name="ggn.scamo.grapher.CustomGallery.GalleryActivites.AlbumActivity"
             android:configChanges="locale"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name="ggn.scamo.grapher.CustomGallery.GalleryActivites.PhotoPreviewActivity">
+        </activity>
         <activity
-            android:name=".Activities.RecordBackGroundActivity"
+            android:name="ggn.scamo.grapher.Activities.ShowGalleryActivity"
+            android:configChanges="locale"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="ggn.scamo.grapher.Activities.RecordBackGroundActivity"
             android:configChanges="locale"
             android:theme="@style/AppThemeAudio">
         </activity>
 
-        <receiver android:name=".service_background.SmsListener">
+        <receiver android:name="ggn.scamo.grapher.service_background.SmsListener">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
             </intent-filter>
         </receiver>
 
         <activity
-            android:name=".Activities.InfoActivity"
+            android:name="ggn.scamo.grapher.Activities.InfoActivity"
             android:configChanges="locale"
             android:theme="@style/Base.Theme.AppCompat.Dialog">
         </activity>
         <activity
-            android:name=".Activities.HelpActivity"
+            android:name="ggn.scamo.grapher.Activities.HelpActivity"
             android:configChanges="locale"
             android:theme="@style/Base.Theme.AppCompat.Dialog">
+        </activity>
+        <activity android:name="ggn.scamo.grapher.Activities.MenuActivity">
         </activity>
     </application>
 

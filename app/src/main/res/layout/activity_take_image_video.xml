@@ -16,6 +16,7 @@
 
 
         <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?colorAccent"
@@ -30,6 +31,7 @@
 
 
             <Button
+                android:id="@+id/btnTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -175,7 +177,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Click images by showing pictures"
+                            android:text="Click images by taking phone number"
                             android:textColor="@color/black"/>
 
 
@@ -333,7 +335,7 @@
                 </LinearLayout>
 
 
-                <LinearLayout
+                <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -376,7 +378,7 @@
                     </LinearLayout>
 
 
-                </LinearLayout>
+                </LinearLayout>-->
 
 
                 <LinearLayout

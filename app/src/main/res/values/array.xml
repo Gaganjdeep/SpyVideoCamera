@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <array name="drawable_array">
+
+        <item>@drawable/ic_menu_camera</item>
+        <item>@drawable/ic_video</item>
+        <item>@drawable/ic_audio</item>
+        <item>@drawable/ic_help</item>
+        <item>@drawable/ic_settings</item>
+    </array>
+</resources>
