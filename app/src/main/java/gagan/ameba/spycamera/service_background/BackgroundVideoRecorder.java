@@ -19,7 +19,7 @@ import android.view.WindowManager;
 
 import java.util.Date;
 
-import gagan.ameba.spycamera.R;
+import ggn.scamo.grapher.R;
 
 /**
  * Created by gagandeep on 16 May 2016.
