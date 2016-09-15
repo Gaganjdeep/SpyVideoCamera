@@ -117,7 +117,7 @@ public class MenuActivity extends BaseActivityG implements View.OnClickListener
         revealView = springFloatingActionMenu;
 
 
-        countDownTimer = new CountDownTimer(2700, 2700)
+        countDownTimer = new CountDownTimer(2200, 2200)
         {
 
             @Override
