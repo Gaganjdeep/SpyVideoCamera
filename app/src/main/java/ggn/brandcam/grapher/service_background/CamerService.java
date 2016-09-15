@@ -521,7 +521,7 @@ public class CamerService extends Service implements
         canvas.drawBitmap(src, 0, 0, null);
         Paint paint = new Paint();
         paint.setColor(Color.DKGRAY);
-        paint.setTextSize(42);
+        paint.setTextSize(57);
         paint.setAntiAlias(true);
         canvas.drawText(watermark, src.getWidth()-500, src.getHeight()-50, paint);
 
