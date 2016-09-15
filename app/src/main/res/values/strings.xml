@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ScamoGrapher</string>
+    <string name="app_name">BrandCam</string>
     <string name="take_image">Take Image</string>
     <string name="record_video">Record Video</string>
     <string name="audio_recorder">Audio Recorder</string>
@@ -29,16 +29,15 @@
     <string name="rear">Rear</string>
 
 
-    <string name="info_text">Have you ever wondered if you could take a picture of anyone, who sit next to you one day in the metro or anywhere… and you wanted absolutely to show that pic to your best friends...... it\'s possible ! we have developed an application that can allow you to take photo of anyone without noticing.</string>
+    <string name="info_text">You can change default folder name or images count from the settings ,Use it according to your need .Suggestions are most welcome..!
+        \n\n
+        Enjoy ..!
+        .</string>
 
 
 
-    <string name="help_text">This app will allow you to take pictures , record a video and record audio in order to spy on anyone. \n\n
-- You can show your target images or video and the application will take her/his pictures or video at the same time.     \n\n
--You can ask your target for her/his phone number… the app will record his/her video or take pictures at the same time when his/her typing the phone number ( the phone number will also be added in your contacts ). \n\n
--You can start recording the application on background and "reduce
-" the app so you can take images or record video in background.  \n\n
--You can also record voice in background or start recording when your phone receive a SMS "Start recording" send by any number
+    <string name="help_text">This app will allow you to take pictures , record a video and record audio in a exiting way. \n\n
+        App will notify every event with a notification..
 
 
     \n\n\n\n

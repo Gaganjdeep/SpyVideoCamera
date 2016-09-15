@@ -12,7 +12,7 @@ import android.support.v4.app.NotificationCompat;
 
 import java.io.IOException;
 
-import ggn.scamo.grapher.R;
+import ggn.brandcam.grapher.R;
 
 /**
  * Created by gagandeep on 28 Mar 2016.

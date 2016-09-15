@@ -19,7 +19,7 @@ import android.view.WindowManager;
 
 import java.util.Date;
 
-import ggn.scamo.grapher.R;
+import ggn.brandcam.grapher.R;
 
 /**
  * Created by gagandeep on 16 May 2016.
